@@ -72,9 +72,14 @@ class PaymentMethodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function default(Request $request, $methodId)
     {
-        //
+        try {
+            auth()->user()->updateDefaultPaymentMethod($methodId);
+            return redirect()->route('billing')->withMessage("Default Payment Method Updated!");
+        } catch(\Exception $e){
+            return redirect()->back()->withError($e->getMessage());
+        }
     }
 
     /**

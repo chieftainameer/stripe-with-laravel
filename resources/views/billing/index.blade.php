@@ -10,22 +10,33 @@
                         @if(session('message'))
                             <div class="alert alert-info">{{session('message')}}</div>
                         @endif
+                        @if(!is_null($currentPlan))
+                            @if(auth()->user()->subscription('default')->onTrial())
+                                <div class="alert alert-warning">Your trial period will end on {{auth()->user()->subscription('default')->trial_ends_at->toDateString()}}</div>
+                            @endif
+                        @endif
+
                         <div class="row">
                         @foreach($plans as $plan)
                                 <div class="col-md-4 text-center">
                                     <h3>{{$plan->name}}</h3>
                                     <h5>USD {{number_format($plan->price/100,2)}}/month</h5>
                                     <hr/>
-                                    @if( $currentPlan->stripe_plan == $plan->stripe_plan_id)
-                                        @if($currentPlan->onGracePeriod())
-                                            Your Plan will end on {{$currentPlan->ends_at->toDateString()}}
-                                            <a href="{{route('resume')}}" class="btn btn-primary">Resume Plan</a>
-                                            @else
-                                            <a href="{{route('cancel')}}" class="btn btn-danger" onclick="return alert('Are You Confirm')">Cancel Plan</a>
-                                        @endif
+                                    @if(is_null($currentPlan))
+                                        <a href="{{route('checkout',$plan->id)}}" class="btn btn-primary" role="button">Subscribe to {{$plan->name}} plan</a>
                                     @else
-                                    <a href="{{route('checkout',$plan->id)}}" class="btn btn-primary" role="button">Subscribe to {{$plan->name}} plan</a>
+                                        @if($currentPlan->stripe_plan == $plan->stripe_plan_id)
+                                            @if($currentPlan->onGracePeriod())
+                                                Your Plan will end on {{$currentPlan->ends_at->toDateString()}}
+                                                <a href="{{route('resume')}}" class="btn btn-primary">Resume Plan</a>
+                                            @else
+                                                <a href="{{route('cancel')}}" class="btn btn-danger" onclick="return alert('Are You Confirm')">Cancel Plan</a>
+                                            @endif
+                                         @else
+                                            <a href="{{route('checkout',$plan->id)}}" class="btn btn-primary" role="button">Subscribe to {{$plan->name}} plan</a>
                                         @endif
+                                     @endif
+
                                 </div>
                             @endforeach
 
@@ -57,7 +68,7 @@
                                    <td>Default Method</td>
                                       @else
                                       <td>
-                                          <a href="">Mark As Default</a>
+                                          <a href="{{route('payment-methods.default',$pm->id)}}">Mark As Default</a>
                                       </td>
                                   @endif
                               </tr>
