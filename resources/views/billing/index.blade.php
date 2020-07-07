@@ -11,8 +11,8 @@
                             <div class="alert alert-info">{{session('message')}}</div>
                         @endif
                         @if(!is_null($currentPlan))
-                            @if(auth()->user()->subscription('default')->onTrial())
-                                <div class="alert alert-warning">Your trial period will end on {{auth()->user()->subscription('default')->trial_ends_at->toDateString()}}</div>
+                            @if($currentPlan->trial_ends_at)
+                                <div class="alert alert-warning">Your trial period will end on {{$currentPlan->trial_ends_at->toDateString()}}</div>
                             @endif
                         @endif
 

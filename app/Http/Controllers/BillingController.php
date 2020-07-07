@@ -34,7 +34,8 @@ class BillingController extends Controller
     {
         $plan = Plan::findOrFail($r->input('billing-plan-id'));
         try{
-            auth()->user()->newSubscription('default',$plan->stripe_plan_id)->trialDays(7)->create($r->input('payment-method'));
+            //auth()->user()->newSubscription('default',$plan->stripe_plan_id)->trialDays(7)->create($r->input('payment-method'));
+            auth()->user()->newSubscription('default',$plan->stripe_plan_id)->create($r->input('payment-method'));
             return redirect()->route('billing')->withMessage('Plan subscribed successfully');
 
         } catch (\Exception $e){
