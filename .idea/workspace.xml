@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c2a1ebed-2507-4d85-8387-103e06a50217" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Jobs/StripeWebhooks/ChargeSucceededJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Jobs/StripeWebhooks/ChargeSucceededJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Notifications/ChargeSuccessNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Notifications/ChargeSuccessNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/../config/logging.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +168,7 @@
       <workItem from="1592044666334" duration="15346000" />
       <workItem from="1594043189215" duration="8666000" />
       <workItem from="1594129860575" duration="7635000" />
-      <workItem from="1594402004901" duration="2369000" />
+      <workItem from="1594402004901" duration="4214000" />
     </task>
     <servers />
   </component>
@@ -173,9 +176,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1594144892885">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1594405914282">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594144892885" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594405914282" />
   </component>
 </project>
