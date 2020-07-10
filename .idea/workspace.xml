@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2a1ebed-2507-4d85-8387-103e06a50217" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/saas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/saas.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/BillingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/BillingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/billing/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/billing/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Jobs/StripeWebhooks/ChargeSucceededJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Jobs/StripeWebhooks/ChargeSucceededJob.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +164,8 @@
       <updated>1592044644205</updated>
       <workItem from="1592044666334" duration="15346000" />
       <workItem from="1594043189215" duration="8666000" />
-      <workItem from="1594129860575" duration="7102000" />
+      <workItem from="1594129860575" duration="7635000" />
+      <workItem from="1594402004901" duration="2369000" />
     </task>
     <servers />
   </component>
