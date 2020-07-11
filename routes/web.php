@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/resume-plan','BillingController@resumePlan')->name('resume');
     Route::post('/checkout/process','BillingController@process_checkout')->name('checkout.process');
     Route::get('payment-methods/default/{methodId}','PaymentMethodController@default')->name('payment-methods.default');
+    Route::get('invoice/download/{paymentId}','BillingController@download_invoice')->name('download.invoice');
     Route::resource('payment-methods','PaymentMethodController');
 });
 

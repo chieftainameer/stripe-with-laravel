@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Payment;
 use App\Plan;
 use Illuminate\Http\Request;
 
@@ -12,11 +13,25 @@ class BillingController extends Controller
     {
         //dd(auth()->user()->subscription('default')->trial_ends_at->toDateString());
         $plans = Plan::all();
+        $payments = Payment::where('user_id',auth()->user()->id)->latest()->get();
         $currentPlan = auth()->user()->subscription('default') ?? NULL ;
         $paymentMethods = auth()->user()->paymentMethods();
         //dd(auth()->user()->defaultPaymentMethod()->id);
         //dd($paymentMethods);
-        return view('billing.index',compact('plans','currentPlan','paymentMethods'));
+        return view('billing.index',compact('plans','currentPlan','paymentMethods','payments'));
+    }
+
+    public function download_invoice($p)
+    {
+        $payment = Payment::findOrFail($p);
+        $filename = storage_path('app/invoices/'.$payment->id.'.pdf');
+        if (file_exists($filename)){
+            return response()->download($filename);
+        }
+        else{
+            abort(404);
+        }
+
     }
 
     public function checkout($plan_id)
