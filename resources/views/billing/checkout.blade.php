@@ -15,14 +15,58 @@
                             @csrf
                             <input type="hidden" name="billing-plan-id" id="billing-plan-id" value="{{$plan->id}}" />
                             <input type="hidden" name="payment-method" id="payment-method" value="" />
-                        <input id="card-holder-name" type="text">
-
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Name:</label>
+                                        <input id="card-holder-name" type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Address 1:</label>
+                                        <input id="address-one" name="address_one" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Address 2 (optional):</label>
+                                        <input id="address-two" name="address_two" type="text" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Country:</label>
+                                        <input id="country" name="country" type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>City:</label>
+                                        <input id="city" name="city" type="text" class="form-control" >
+                                    </div>
+                                </div>
+                            </div>
                         <!-- Stripe Elements Placeholder -->
-                        <div id="card-element"></div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="card-element"></div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <br/>
-                        <button class="bn btn-primary" id="card-button">
-                            Pay ${{number_format($plan->price/100,2)}}
-                        </button>
+                            <div class="form-group">
+                                <div class="row" style="text-align: center">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary" id="card-button">
+                                            Pay ${{number_format($plan->price/100,2)}}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
                         </form>
                         </div>
                     </div>
