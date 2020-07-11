@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::post('/checkout/process','BillingController@process_checkout')->name('checkout.process');
     Route::get('payment-methods/default/{methodId}','PaymentMethodController@default')->name('payment-methods.default');
     Route::get('invoice/download/{paymentId}','BillingController@download_invoice')->name('download.invoice');
+    Route::view('tasks','BillingController@tasks')->name('tasks');
     Route::resource('payment-methods','PaymentMethodController');
 });
 
