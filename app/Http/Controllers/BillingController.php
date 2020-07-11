@@ -36,6 +36,12 @@ class BillingController extends Controller
         try{
             //auth()->user()->newSubscription('default',$plan->stripe_plan_id)->trialDays(7)->create($r->input('payment-method'));
             auth()->user()->newSubscription('default',$plan->stripe_plan_id)->create($r->input('payment-method'));
+            auth()->user()->update([
+                'address-one' => $r->input('address_one'),
+                'address-two' => $r->input('address_two'),
+                'country' => $r->input('country'),
+                'city' => $r->input('city'),
+            ]);
             return redirect()->route('billing')->withMessage('Plan subscribed successfully');
 
         } catch (\Exception $e){
